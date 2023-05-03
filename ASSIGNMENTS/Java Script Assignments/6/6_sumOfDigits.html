@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum Of Digits</title>
+    <script>
+        function sumOfDigits() {
+            document.getElementById("output").innerHTML = ""
+                    var num = parseInt(document.getElementById("num").value)
+                    var sum=0
+                    while(num>0)
+                    {
+                        var rem = num % 10;
+                        sum = sum+rem;
+                        num=parseInt(num/10);
+                    }
+
+                    document.getElementById("output").innerHTML = "<p>"+"Sum of digits: "+sum+"</p>";
+
+
+        }
+    </script>
+    <style>
+        #output{
+            /* display: inline-block;
+            padding: 30%; */
+            position: absolute;
+            height: 300px;
+            width: 300px;
+            left : 45%;
+        }
+    table {
+            margin-top: 250px;
+             
+            }
+    .container{
+        border: 2px solid aqua;
+    }
+
+    div > p{
+        position: relative;
+        top: 35%;
+        left:35%
+    }
+
+    </style>
+    
+</head>
+<body>
+    <div></div>
+    <center>
+    <table width="50%">
+        <tr>
+            <td>
+                Enter 5 Digit Number: 
+            </td>
+            <td>
+                <input type="text" id="num" autofocus></input>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="button" id="rev" onclick="sumOfDigits()">Sum It.</button>
+            </td>
+        </tr>
+    </table>
+</center>
+
+<div id="output" class="container"  >
+    <span ></span>
+</div>
+
+
+</body>
+</html>

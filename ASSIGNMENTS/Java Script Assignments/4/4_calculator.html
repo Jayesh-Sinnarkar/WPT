@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <script>
+        function operation(){
+            document.getElementById("output").innerHTML=""
+            var num1 = parseInt(document.getElementById("fn").value)
+            var num2 = parseInt(document.getElementById("sn").value)
+            op = document.getElementById("sel").value
+                   
+            switch(op)
+            {
+                case "+":
+                var ans = num1+num2
+                break;
+
+                case "*":
+                var ans = num1*num2
+                break;
+
+                case "/":
+                var ans = num1/num2
+                break;
+
+                case "-":
+                var ans = num1-num2
+                break;
+                
+            }
+            document.getElementById("output").innerHTML= "<br>First Number: "+num1+"<br>"+"Second Number: "+num2+"<br>"+"Operation: "+op+"<br>Result: "+ans
+
+
+        }
+
+        function clrScr(){
+            document.getElementById("output").innerHTML=""
+            document.getElementById("fn").value=""
+            document.getElementById("sn").value=""
+            document.getElementById("op").value=""
+
+        }
+    </script>
+</head>
+<body>
+    <!-- Write a function that accepts two numbers and a operator like (+,-,*, /) from user and performs the appropriate operation indicated by the operator.  -->
+    <form>
+        <table>
+            <tr>
+                <td><label for="msg"> Enter First Number: </label></td>
+                <td><input type="text" id="fn" required></td>
+            </tr>
+            <tr>
+                <td><label for="msg"> Enter Second Number: </label></td>
+                <td><input type="text" id="sn" required></td>
+            </tr>
+            <tr>
+                <td><label for="msg"> Select Operator:  </label></td>
+                <td>
+                    <select id="sel" required>Select Operator  
+                    <option id="add" value="+"> + </option>
+                    <option id="sub" value="-"> - </option>
+                    <option id="mul" value="*"> * </option>
+                    <option id="div" value="/"> / </option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"> <br><button type="button" id="Ans" name="Ans" onclick="operation()">Result</button></td> 
+                <td align="center"> <br><button type="button" id="Clear" name="Clear" onclick="clrScr()">Clear</button></td> 
+            </tr>
+        </table>
+        <hr>
+        <div id="output" name="output"></div>
+    </form>
+</body>
+</html>
