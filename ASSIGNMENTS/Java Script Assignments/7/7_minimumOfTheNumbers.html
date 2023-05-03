@@ -2,18 +2,29 @@
 <html lang="en">
 <head>
     <title>Minimum of the numbers</title>
-    <script>
-        arr = {10,20,30}
+    <script src="./7_minimumOfTheNumbers.js">
 
     </script>
+   
 </head>
 <body>
-    <form>
+    <br><br><br>
+    <form id="form1">
         <table>
-            
-        </table>
-        <hr>
-        <div id="output" name="output"></div>
+            <tr>
+                <td><label for="no">Enter size of array:</label></td>
+                <td><input type="text" id="no"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <br><button type="button" id="btn" onclick="displayForm()">Create Array</button>
+                </td>                
+            </tr>
+        </table> <br><br><br>
     </form>
+
+    <div id="input"></div>
+    <div id="output"></div>
+
 </body>
 </html>
