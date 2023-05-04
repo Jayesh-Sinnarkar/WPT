@@ -3,13 +3,22 @@ var arrSize
 
 const displayForm = ()=>{
 
+    document.getElementById("output").innerHTML = "" 
+
     arrSize = parseInt(document.getElementById("no").value) 
 
-    for(var i=1;i<=arrSize;i++) {
-    document.getElementById("output").innerHTML += 
-    "<label for=\"no\">Enter No "+i+":</label> &nbsp;&nbsp; <input type=\"text\" name=\"num\"><br><br>"
-    }
-    document.getElementById("output").innerHTML += "&nbsp; &nbsp; &nbsp;<button type=\"button\" id=\"btn3\" onclick=\"getMin()\">Get Minimum</button>"
+    var printOut = "<fieldset><legend>Give Input</legend>"
+
+            for(var i=1;i<=arrSize;i++) {
+            printOut += "<label for=\"no\">Enter No "+i+":</label> &nbsp;&nbsp; <input type=\"text\" name=\"num\"><br><br>"
+            }
+
+
+    printOut += "&nbsp; &nbsp; &nbsp;<button type=\"button\" id=\"btn3\" onclick=\"getMin()\">Get Minimum</button>"
+
+    printOut +="</fieldset>"
+
+    document.getElementById("output").innerHTML = printOut
 }
 
 
