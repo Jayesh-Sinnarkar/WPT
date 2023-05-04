@@ -7,9 +7,9 @@ const displayForm = ()=>{
 
     for(var i=1;i<=arrSize;i++) {
     document.getElementById("output").innerHTML += 
-    "<label for=\"no\">Enter No"+i+":</label> &nbsp;&nbsp; <input type=\"text\" name=\"num\"><br><br>"
+    "<label for=\"no\">Enter No "+i+":</label> &nbsp;&nbsp; <input type=\"text\" name=\"num\"><br><br>"
     }
-    document.getElementById("output").innerHTML += "&nbsp; <button type=\"button\" id=\"btn3\" onclick=\"getMin()\">Get Minimum</button>"
+    document.getElementById("output").innerHTML += "&nbsp; &nbsp; &nbsp;<button type=\"button\" id=\"btn3\" onclick=\"getMin()\">Get Minimum</button>"
 }
 
 

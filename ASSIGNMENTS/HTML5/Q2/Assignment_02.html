@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./Assignment_2.css">
+    <title>Problem-2</title>
+</head>
+<body class="flex-container body-container">
+    <section class="flex-item">
+        <form action="">
+        <fieldset>
+            <legend>Registration Details</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="uni-name">University:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="uni-name" id="uni-name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Institute">Institute:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="institute" id="institute">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="degree">Branch:</label>
+                    </td>
+                    <td>
+                        <select name="Branch" id="Branch">
+                            <option value="none" selected hidden>----select----</option>
+                            <option value="Mechanical">Mechanical</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Civil">Civil</option>
+                            <option value="ComputerScience">Computer Science</option>
+                            <option value="HR">H R</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Management">Management</option>
+                        </select>
+           
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="degree">Degree:</label>
+                    </td>
+                    <td>
+                        <select name="degree" id="degree">
+                            <option value="none" selected hidden>----select----</option>
+                            <option value="B E">B E</option>
+                            <option value="M E">M E</option>
+                            <option value="M Tech">M Tech</option>
+                            <option value="M B A">M B A</option>
+                        </select>
+                        <input type="radio" name="status" id="pursuing"><label for="pursuing">Pursuing</label>
+                        <input type="radio" name="status" id="completed"><label for="completed">Completed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="cpi">Average CPI:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="cpi" id="cpi" min="4" max="9"> Upto
+                        <input type="number" name="sem" id="sem" min="1" max="8"> Th Semester
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="experience">Experiece:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="exp" id="exp" min="0" max="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="wbesite">Your website or blog:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="website" id="website" value="https://">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <input type="submit" name="submit" id="button" value="submit">
+    </form>
+    </section>
+</body>
+</html>

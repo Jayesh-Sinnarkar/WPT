@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Problem-1</title>
+
+    <link rel="stylesheet" href="./Assignment_1.css">
+</head>
+<body class="flex-container body-container">
+    <header class="flex-item">
+        <h1>Appointment Scheduler</h1>
+    </header>
+    <section class="flex-item flex-container body-container">
+        <article class="flex-item">
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Name</label>
+                    <br>
+                    <input type="text" name="name" id="name">
+                    <br><br>
+                    <label for="tel-number">Telephone number</label>
+                    <br>
+                    <input type="text" name="tel-number" id="tel-number">
+                    <br><br>
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="text" name="email" id="email">
+                    <br><br>
+                    <label for="dob">Date of Birth</label>
+                    <br>
+                    <input type="date" name="dob" id="dob">
+                </fieldset>
+                <fieldset>
+                    <legend>Appointment Request</legend>
+                    <label for="reason">What is the reason for your visit?</label>
+                    <br>
+                    <input type="text" name="reason" id="reason" placeholder="Select or type your reason">
+
+                    <br><br>
+                    <label for="pain-level">Current pain level</label>
+                    <br>
+                    <input type="range" name="pain-level" id="pain-level" min="1" max="10">
+                    <br><br>
+                    <label for="preferred-date">Preferred Date</label>
+                    <br>
+                    <input type="date" name="preferred-date" id="preferred-date">
+                    <br><br>
+                    <label for="time">Preferred Time</label>
+                    <br>
+                    <input type="time" name="time" id="time">
+                    <br><br>
+                </fieldset>
+                <input type="submit" name="submit" id="submit" value="Submit" >
+            </form>
+        </article>
+    </section>
+</body>
+</html>

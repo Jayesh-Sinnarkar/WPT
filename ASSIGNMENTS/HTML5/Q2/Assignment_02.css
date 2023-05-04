@@ -1,0 +1,30 @@
+.flex-container{
+    display: flex;
+}
+
+.flex-item{
+    flex:1;
+}
+
+.body-container{
+    background-color: rgb(25, 88, 176);
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.15em;
+    height: 100%;
+    width: 100%;
+}
+
+fieldset{
+    border: 2px solid white;
+}
+
+legend{
+    color: white;
+    font-size: 1.25em;
+}
+
+table{
+    width: 100%;
+}

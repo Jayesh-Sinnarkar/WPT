@@ -1,0 +1,20 @@
+.flex-container{
+    display: flex;
+}
+
+.flex-item{
+    flex:1;
+}
+
+.body-container{
+    flex-direction: column;
+}
+
+form{
+    padding: 2px;
+}
+
+form > * {
+    margin: 5px;
+}
+
