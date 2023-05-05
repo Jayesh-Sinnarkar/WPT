@@ -3,7 +3,7 @@
 <head>
     <title>Calendar</title>
     <style>
-        #yello{
+        #yellow{
             background: #fbe604;
         }
 
@@ -15,7 +15,12 @@
             background: green;
         }
 
+        .blue{
+            background: cyan;
+        }
+
         div{
+            
             position: absolute;
             top: 40%;
             left: 40%;
@@ -25,15 +30,25 @@
             height: 250px;
         }
 
+        table{
+            border-color:gray;
+            border-collapse: collapse;
+            border-width: 3px;
+        }
+
+        tr td{
+            border-width: 4px;
+        }
+
         
 
     </style>
 </head>
 <body>
     <div>
-    <table border="2px" width="400" height="400">
+    <table border="5px" width="400" height="400">
         <tr>
-            <th id="yello" colspan="7">January</td>
+            <th id="yellow" colspan="7">January</td>
         </tr>
         <tr class="pink">
             <td>Sun</td>
@@ -50,7 +65,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td id="yello">1</td>
+            <td id="yellow">1</td>
             <td class="blue">2</td>
         </tr>
         <tr>
@@ -83,7 +98,7 @@
         <tr>
             <td class="green">24</td>
             <td>25</td>
-            <td id="yello">26</td>
+            <td id="yellow">26</td>
             <td>27</td>
             <td>28</td>
             <td>29</td>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Emp Details</title>
+    <style>
+        table{
+            background-color:lightpink;
+            border-collapse: collapse;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table border="2px">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="text" id="text" size="20"></td>
+            </tr>
+            <tr>
+                <td>Employee Code</td>
+                <td><input type="text" name="code" id="code" size="5"></td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td><input type="radio" name="a1" id="a1">Admin</input><br>
+                <input type="radio" name="a2" id="a2">HR</input><br>
+                <input type="radio" name="a3" id="a3">Technical</input><br>
+                <input type="radio" name="a4" id="a4">Accounts</input></td>
+
+            </tr>
+            <tr>
+                <td>Date Of Joining</td>
+                <td><input type="date" name="date" id="date"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="add" id="add" cols="30" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td>Training Programs Attended</td>
+                <td><input type="checkbox" name="b1" id="b1">HTML/DHTML</input><br>
+                <input type="checkbox" name="b2" id="b2">JAVA</input><br>
+                <input type="checkbox" name="b3" id="b3">CLIENT/SERVER</input><br>
+                <input type="checkbox" name="b4" id="b4">.NET</input></td>
+
+            </tr>
+            <tr>
+                <td>Training Programs Need to Attend</td>
+                <td>
+                    <select id="t1" name="t1" multiple>
+                        <option value="JAVASCRIPT">JAVASCRIPT</option>
+                        <option value="JSTUTORIALS">JSTUTORIALS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Send the information at</td>
+                <td><a href="mailto:empinfo@patni.com">empinfo@patni.com</a></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
