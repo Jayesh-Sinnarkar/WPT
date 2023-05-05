@@ -2,28 +2,63 @@
 body{
     text-align: center;
     background-color: aqua;
+    /* background-image:url('https://i.pinimg.com/564x/78/96/7a/78967ae176149e2c891da5b23c39fe67.jpg'); */
+    /* background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    backface-visibility:var(25%) */
 }
 
-div{
+h1{
+    font-size: 3em;
+    color:darkblue;
+}
+
+legend{
+    font-size: 2.5em;
+    color:darkblue;
+}
+
+#extDiv{
     position: absolute;
     margin-right: auto;
-    margin-left: 40%;
-    margin-top: 10%;
-
+    margin-left: 35%;
+    margin-top: 5%;
     width: fit-content; 
-    background-color: cyan;
+    /* background-color: cyan; */
+}
+
+#resDiv{
+    display: none;
+    position: fixed;
+    margin-right: auto;
+    margin-left: 27%;
+    margin-top: 25%;
+    /* background-color: bisque; */
+    text-align: center;
+    top: 5em;
+    left: 1em; 
+    /* width: 200px; */
+    height:min-content;
+    width: 40em;
+    /* height:fit-content; */
+    /* border: 2px solid black; */
+}
+
+span{
+    position:relative;
+    font-size: 2em;
+           
 }
 
 fieldset{
     position: relative;
-    height: 10em;
+    height: 11.5em;
+    top:1.5em;
+    border-radius: 2em;
+    border: 0.5em solid;
     
 }
-
-/* form{
-    position: relative;
-    z-index: 0;
-} */
 
 #pow{
     position: relative;
@@ -36,10 +71,11 @@ fieldset{
 #num{
     position: relative;
     text-align: center;
-    top: 3.5em;
+    top: 3em;
     left: 2em;
     width: 4em;
     height:4em;
+    
 }
 
 #calp{
@@ -50,5 +86,9 @@ fieldset{
     width: 8em;
 
 }
+
+
+
+
 
 
