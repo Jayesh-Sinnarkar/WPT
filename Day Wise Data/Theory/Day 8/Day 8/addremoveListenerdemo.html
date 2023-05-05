@@ -2,7 +2,9 @@
     <head>
         <script>
             var cnt=2;
-            function addnewtextbox(){
+
+            function addnewtextbox() {
+
                 var inp=document.createElement("input")  //<input/>
                 inp.setAttribute("type","text"); //<input type="text"/>
                 inp.setAttribute("name","nm"+cnt);//<input type="text" name="nm1"/ >
@@ -13,7 +15,9 @@
                 cnt++;
 
             }
+
             function displayCities(){
+                
                 var btn=document.getElementById("addnew");
                 btn.removeEventListener("click",addnewtextbox)
                 arr=[];
