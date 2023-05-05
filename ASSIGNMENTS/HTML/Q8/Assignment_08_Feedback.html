@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="./Assignment_08.css">
+    <title>Problem-8</title>
+</head>
+<body>
+    <div>
+    <header>
+        <h1>
+            Feedback Form
+        </h1>
+    </header>
+    <section>
+        <p>
+            This is a feedback form to gather information from the customers about the problems or difficulties they have faced during the purchase of sports items from the website
+        </p>
+        <h4>Instructions to fill the form</h4>
+        <ol>
+            <li>
+                fields marked with <span>*</span> are mandatory
+            </li>
+            <li>
+                Default selection for type of problem is Technical
+            </li>
+            <li>
+                If the status of solution is unknown leave the radio buttons unchecked
+            </li>
+        </ol>
+            
+    </section>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    <label for="problem">Type of problem</label>
+                </td>
+                <td>
+                    <select name="problem" id="problem">
+                        <option value="technical">Technical</option>
+                        <option value="prodUnavailable">Product unavailable</option>
+                        <option value="missingInfo">Missing information about product</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="uname">User name</label><span>*</span>
+                </td>
+                </td>
+                <td>
+                    <input type="text" name="uname" id="uname" placeholder="Enter user name" required>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email</label><span>*</span>
+                </td>
+                <td>
+                    <input type="text" name="email" id="email" required placeholder="Enter user email" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="location">Location</label><span>*</span>
+                </td>
+                <td>
+                    <input type="text" name="location" id="location" required placeholder="Enter user location" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phone">Phone</label>
+                </td>
+                <td>
+                    <input type="text" name="phone" id="phone" minlength="10" maxlength="10" placeholder="Enter user phone" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="desc">Description</label><span>*</span>
+                </td>
+                <td>
+                   <textarea name="desc" id="desc" cols="30" rows="5" required placeholder="Enter description of problem" ></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="notif">Notification of problem solved</label>
+                </td>
+                <td>
+                    <input type="radio" name="notif" id="solvedYes" value="yes"><label for="solvedYes">Yes</label>
+                    <input type="radio" name="notif" id="solvedNo" value="no"><label for="solvedNo">No</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit" id="submit" value="Submit">
+                </td>
+            </tr>
+        </table>    
+    </form>
+</div>
+</body>
+</html>
