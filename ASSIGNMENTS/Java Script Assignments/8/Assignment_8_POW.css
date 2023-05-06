@@ -1,0 +1,54 @@
+
+body{
+    text-align: center;
+    background-color: aqua;
+}
+
+div{
+    position: absolute;
+    margin-right: auto;
+    margin-left: 40%;
+    margin-top: 10%;
+
+    width: fit-content; 
+    background-color: cyan;
+}
+
+fieldset{
+    position: relative;
+    height: 10em;
+    
+}
+
+/* form{
+    position: relative;
+    z-index: 0;
+} */
+
+#pow{
+    position: relative;
+    text-align: center;
+    left: 10em;
+    width: 2em;
+    height:2em;
+}
+
+#num{
+    position: relative;
+    text-align: center;
+    top: 3.5em;
+    left: 2em;
+    width: 4em;
+    height:4em;
+}
+
+#calp{
+    position: relative;
+    text-align: center;
+    top: 8em;
+    right: 4.5em;
+    width: 8em;
+
+}
+
+
