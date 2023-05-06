@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Compound Intrest</title>
+    <link rel="stylesheet" href="./9_Assignment_CompoundIntrest.css"></link>
+    <script src="./9_Assignment_CompoundIntrest.js"></script>
+</head>
+<body>
+    
+        <table class="container" >
+            <tr>
+                <th colspan="2">Calculate Compound Intrest</th>
+            </tr>
+            <tr>
+                <td>Principle = </td>
+                <td >
+                    <input type="text" id="prin" name="prin" size="10" required>
+                </td>
+                <td id="err">This is Error Message</td>
+            </tr>
+            <tr>
+                <td>Rate Of Intrest =</td>
+                <td><input type="text" id="roi" name="roi" size="10" required></td>
+                <td id="err">This is Error Message</td>
+            </tr>
+            <tr>
+                <td>Number of years = </td>
+                <td><input type="text" id="yrs" name="yrs" size="10" required></td>
+                <td id="err">This is Error Message</td>
+            </tr>
+            <tr>
+                <td align="center" colspan="3">
+                    <button type="submit" id="btn" name="btn" value="Calculate" onclick="calCompound()">Calculate</button>
+                </td>
+            </tr>
+            <tr>
+                <td  id="output" colspan="2" align="center"><span></span></td>
+            </tr>
+        </table>
+
+   
+    
+</body>
+</html>

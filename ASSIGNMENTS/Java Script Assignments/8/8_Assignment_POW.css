@@ -1,12 +1,12 @@
 
 body{
     text-align: center;
-    background-color: aqua;
+    background-color: #b2c5ef;;
 }
 
 h1{
     font-size: 3em;
-    color:darkblue;
+    color:#0c6e1d;
 }
 
 legend{
@@ -73,14 +73,28 @@ fieldset{
     
 }
 
-#calp{
+#calp {
     position: relative;
     text-align: center;
     top: 8em;
     right: 4.5em;
     width: 8em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: #e10404;
+    background-color: rgb(255 196 196);
 
 }
+
+input[type="text"]{
+    background-color: #fbe2e2;
+    border-radius: 3em;
+    border : 2px solid #e10404; 
+}
+
+
+
 
 
 
