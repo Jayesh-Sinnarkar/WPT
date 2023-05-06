@@ -14,31 +14,28 @@
             <tr>
                 <td>Principle = </td>
                 <td >
-                    <input type="text" id="prin" name="prin" size="10" required>
+                    <input type="text" id="pri" name="prin" size="10" required pattern="[0-9]">
                 </td>
-                <td id="err">This is Error Message</td>
+                <td id="errp">This is Error Message</td>
             </tr>
             <tr>
                 <td>Rate Of Intrest =</td>
-                <td><input type="text" id="roi" name="roi" size="10" required></td>
-                <td id="err">This is Error Message</td>
+                <td><input type="text" id="roi" name="roi" size="10" required pattern="[0-9]"></td>
+                <td id="errr">This is Error Message</td>
             </tr>
             <tr>
                 <td>Number of years = </td>
-                <td><input type="text" id="yrs" name="yrs" size="10" required></td>
-                <td id="err">This is Error Message</td>
+                <td><input type="text" id="yrs" name="yrs" size="10" required pattern="[0-9]"></td>
+                <td id="erry">This is Error Message</td>
             </tr>
             <tr>
-                <td align="center" colspan="3">
+                <td align="center" colspan="2">
                     <button type="submit" id="btn" name="btn" value="Calculate" onclick="calCompound()">Calculate</button>
                 </td>
             </tr>
-            <tr>
-                <td  id="output" colspan="2" align="center"><span></span></td>
+            <tr id="out">
+                
             </tr>
-        </table>
-
-   
-    
+        </table>   
 </body>
 </html>
