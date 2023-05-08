@@ -15,9 +15,31 @@ h3{
     text-align: center;
     font-size: 30px;
 }
-
-
-
 #sortbtn{
     text-align: center;
+    border: 2px solid red;
+
 }
+
+#output{
+    display: block;
+    text-align: center;
+
+}
+
+#outtd{
+    
+    text-align: center;
+    
+}
+
+span{
+    
+    
+    font-size: 2em; 
+    padding-left: auto;
+
+      
+}
+
+
