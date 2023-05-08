@@ -1,0 +1,35 @@
+
+
+
+
+.readcon{
+    border: 2px solid blue;
+    background-color: rgb(241, 213, 218);
+    padding: 20px 20px;
+    margin: 100px auto;
+    width: fit-content;
+
+}
+
+table{
+
+   
+    border-collapse: collapse;
+    line-height: 2em;
+    width: 350px;
+    
+}
+#btno{
+    text-align: center;
+}
+
+th{
+    text-align: center;
+}
+
+.dispcon{
+    display: none;
+    border: 2px solid rebeccapurple;
+    margin: 100px auto;
+    width:fit-content;
+}
