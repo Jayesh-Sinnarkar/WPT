@@ -13,8 +13,7 @@
     background-color: aqua;
     border: 2px solid red;
     border-collapse: collapse;
-    margin-top: 6%;
-    margin-left:33%;
+    margin: 6% auto;
     line-height: 2em;
     
 
@@ -26,6 +25,7 @@ th, td {
 
 #errp,#errr,#erry{
     display: none;
+    color:red;
 }
 
 #out{
@@ -34,6 +34,11 @@ th, td {
 
 #output{
     text-align: center;
+}
+span{
+    color: red;
+    font-size:30px;
+    
 }
 
 
