@@ -31,7 +31,9 @@ const getData = (emp) => {
 
 
 const dispTable = (emp) => {
- 
+
+     
+    document.getElementById("output").innerHTML = ""
     $('#output').css("display","block")
     var str = "<table border=\"2\"> <tr> <th colspan=\"3\">Employee Data </th> </tr> <tr><th>Emp ID</th><th>Emp Name</th><th>Emp Salary</th></tr>"
 
