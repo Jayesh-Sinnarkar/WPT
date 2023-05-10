@@ -4,7 +4,7 @@
 // • Triangle.js – isEquilateral(side1, side2, side3), calcPerimeter() 
 // Create a client application that invokes each of these methods
 
-const calcArea = () => {
+const calcArea = (r) => {
     return 3.14*r*r
 }
 
@@ -21,7 +21,7 @@ const calcDiameter = (r) => {
 
 
 
-exports.module = {
+module.exports = {
 
     area:calcArea,
     cir:calcCircumference,
