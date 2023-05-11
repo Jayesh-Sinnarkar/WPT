@@ -22,6 +22,6 @@ app.get("/aboutus",function(req,resp){
 })
 
 //start the server
-app.listen(3002,function(){
+app.listen(3003,function(){
     console.log("server started at port 3002")
 })

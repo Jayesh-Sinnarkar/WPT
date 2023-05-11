@@ -48,7 +48,7 @@ const server=http.createServer(function(req,resp){
 })
 
 //start the server
-server.listen(3001,function(){
+server.listen(3002,function(){
     console.log("server running on port 3001")
 
 })
