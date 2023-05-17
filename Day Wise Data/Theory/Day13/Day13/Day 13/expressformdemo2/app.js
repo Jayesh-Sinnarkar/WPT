@@ -5,9 +5,6 @@ const express=require("express");
 const app=express();
 const bodyparser=require("body-parser")
 //const m1=require("./module1"))
-
-
-
 //define middlewares
 //if you receive any data from form then use following function
 //for separating url and the data
