@@ -1,0 +1,30 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Details</title>
+</head>
+<body>
+  <h1>Enter Employee Details</h1>
+  <form action="/employees" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="position">Position:</label>
+    <input type="text" id="position" name="position" required>
+
+    <button type="submit">Add Employee</button>
+  </form>
+
+  <h2>Employees List</h2>
+  <ul>
+    <% employees.forEach((employee) => { %>
+      <li><%= employee.name %> - <%= employee.position %></li>
+      <a href="/employees/<%= employee.id %>/edit">Edit</a>
+      <form action="/employees/<%= employee.id %>?_method=DELETE" method="post">
+        <button type="submit">Delete</button>
+      </form>
+    <% }); %>
+  </ul>
+</body>
+</html>

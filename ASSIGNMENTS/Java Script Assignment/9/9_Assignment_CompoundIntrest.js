@@ -10,9 +10,7 @@ const calCompound = ()=> {
     { 
 
     ci= parseFloat((Math.pow(1+(r/100),n)*p)-p).toFixed(2)
-    
     document.getElementById("out").style.display = "block"
-    
     document.getElementById("out").innerHTML = " <td  id=\"output\" align=\"center\" colspan=\"2\">Compound Intrest = "+ci+"</td>"
 
     }

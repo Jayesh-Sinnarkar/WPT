@@ -11,9 +11,6 @@ const displayArea = ()=> {
     inDiv.style.display = "block" 
 
     document.getElementById("resDiv").innerHTML += "<span id=\"span\">Result of  ("+num+") <sup> "+pow+" </sup>is "+calculatePow()+"</span>";
-
-    
-
 }
 
 const calculatePow = () => {
@@ -23,8 +20,7 @@ const calculatePow = () => {
 
     for(var i=1;i<=pow;i++)
     {
-        res = res*num
-        
+        res = res*num       
     }
 
     return res;
