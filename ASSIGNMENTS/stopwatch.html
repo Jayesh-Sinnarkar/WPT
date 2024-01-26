@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #stopwatch {
+            font-size: 7.5em;
+            position: relative;
+        }
+
+        #stopwatch .small {
+            font-size: 0.6em;
+            position: static;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        #stopwatch-labels {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin-top: 10px;
+           
+            
+        }
+
+        #stopwatch-labels div {
+            text-align: center;
+            margin: 0 10px;
+        }
+
+        #stopwatch-labels .small-label {
+            font-size: 0.8em; /* Adjust as needed */
+        }
+
+        #flaggedTimes {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .btn-circle {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="pb-0" id="stopwatch">00:00:00<span class="small">.00</span></div>
+    <div class="" id="stopwatch-labels">
+        <div>hr</div>
+        <div class="small-label">min</div>
+        <div class="small-label">sec</div>
+    </div>
+    <div class="mt-3">
+        <button id="toggle" class="btn btn-success btn-circle">Start</button>
+        <button id="restart" class="btn btn-primary btn-circle">Restart</button>
+        <button id="flag" class="btn btn-info btn-circle">Flag</button>
+    </div>
+    <div id="flaggedTimes"></div>
+</div>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    let timer;
+    let isRunning = false;
+    let startTime;
+    let elapsedTime = 0;
+    let flagCount = 0;
+
+    function formatTime(milliseconds) {
+        const date = new Date(milliseconds);
+        const hours = date.getUTCHours().toString().padStart(2, '0');
+        const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+        const seconds = date.getUTCSeconds().toString().padStart(2, '0');
+        const millisecondsStr = date.getUTCMilliseconds().toString().padStart(3, '0');
+        return `${hours}:${minutes}:${seconds}.<span class="small">${millisecondsStr}</span>`;
+    }
+
+    function updateStopwatch() {
+        const currentTime = new Date().getTime();
+        const deltaTime = currentTime - startTime + elapsedTime;
+        $("#stopwatch").html(formatTime(deltaTime));
+    }
+
+    $("#toggle").on("click", function () {
+        if (!isRunning) {
+            startTime = new Date().getTime();
+            timer = setInterval(updateStopwatch, 10);
+            isRunning = true;
+            $("#toggle").removeClass("btn-success").addClass("btn-warning").text("Pause");
+        } else {
+            clearInterval(timer);
+            elapsedTime += new Date().getTime() - startTime;
+            isRunning = false;
+            $("#toggle").removeClass("btn-warning").addClass("btn-success").text("Start");
+        }
+    });
+
+    $("#restart").on("click", function () {
+        clearInterval(timer);
+        isRunning = false;
+        elapsedTime = 0;
+        $("#stopwatch").html("00:00:00<span class='small'>.00</span>");
+        $("#toggle").removeClass("btn-warning").addClass("btn-success").text("Start");
+    });
+
+    $("#flag").on("click", function () {
+        const flagTime = formatTime(new Date().getTime() - startTime);
+        flagCount++;
+        $("#flaggedTimes").append(`<div>Flag${flagCount}: ${flagTime}</div>`);
+    });
+</script>
+
+</body>
+</html>
