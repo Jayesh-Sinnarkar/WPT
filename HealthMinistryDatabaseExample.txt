@@ -303,3 +303,35 @@ EXEC UpdatePatientInformation
     @PatientID = 1,
     @NewAddress = 'New Street, City',
     @NewPhoneNumber = '555-1234';
+
+
+
+
+-- Alter Ministry table to add IDENTITY property
+ALTER TABLE HealthMinistrySchema.Ministry
+ALTER COLUMN MinistryID INT IDENTITY(1,1);
+
+-- Alter Facilities table to add IDENTITY property
+ALTER TABLE HealthMinistrySchema.Facilities
+ALTER COLUMN FacilityID INT IDENTITY(1,1);
+
+-- Alter Professionals table to add IDENTITY property
+ALTER TABLE HealthMinistrySchema.Professionals
+ALTER COLUMN ProfessionalID INT IDENTITY(1,1);
+
+-- Alter Departments table to add IDENTITY property
+ALTER TABLE HealthMinistrySchema.Departments
+ALTER COLUMN DepartmentID INT IDENTITY(1,1);
+
+-- Alter Equipment table to add IDENTITY property
+ALTER TABLE HealthMinistrySchema.Equipment
+ALTER COLUMN EquipmentID INT IDENTITY(1,1);
+
+-- Alter RegulatoryInspections table to add IDENTITY property
+ALTER TABLE HealthMinistrySchema.RegulatoryInspections
+ALTER COLUMN InspectionID INT IDENTITY(1,1);
+
+-- Alter HealthStatistics table to add IDENTITY property
+ALTER TABLE HealthMinistrySchema.HealthStatistics
+ALTER COLUMN StatisticID INT IDENTITY(1,1);
+
