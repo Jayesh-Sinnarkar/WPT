@@ -1,0 +1,305 @@
+-- Create Ministry table
+CREATE TABLE Ministry (
+    MinistryID INT PRIMARY KEY,
+    MinistryName VARCHAR(255),
+    Location VARCHAR(255),
+    ContactInformation VARCHAR(20),
+    PoliciesAndRegulations TEXT
+);
+
+-- Create Facilities table
+CREATE TABLE Facilities (
+    FacilityID INT PRIMARY KEY,
+    FacilityName VARCHAR(255),
+    Location VARCHAR(255),
+    ContactInformation VARCHAR(20),
+    ServicesOffered TEXT
+);
+
+-- Create Professionals table
+CREATE TABLE Professionals (
+    ProfessionalID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Specialty VARCHAR(255),
+    ContactInformation VARCHAR(20),
+    LicenseInformation VARCHAR(255)
+);
+
+-- Create Departments table
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(255),
+    Description TEXT,
+    FacilityID INT FOREIGN KEY REFERENCES Facilities(FacilityID)
+);
+
+-- Create Equipment table
+CREATE TABLE Equipment (
+    EquipmentID INT PRIMARY KEY,
+    EquipmentName VARCHAR(255),
+    Quantity INT,
+    Condition VARCHAR(50),
+    MaintenanceSchedule VARCHAR(50),
+    DepartmentID INT FOREIGN KEY REFERENCES Departments(DepartmentID)
+);
+
+-- Create RegulatoryInspections table
+CREATE TABLE RegulatoryInspections (
+    InspectionID INT PRIMARY KEY,
+    FacilityID INT FOREIGN KEY REFERENCES Facilities(FacilityID),
+    ProfessionalID INT FOREIGN KEY REFERENCES Professionals(ProfessionalID),
+    InspectionDate DATE,
+    ComplianceStatus VARCHAR(50)
+);
+
+-- Create HealthStatistics table
+CREATE TABLE HealthStatistics (
+    StatisticID INT PRIMARY KEY,
+    MinistryID INT FOREIGN KEY REFERENCES Ministry(MinistryID),
+    StatisticType VARCHAR(255),
+    Data VARCHAR(50),
+    Date DATE
+);
+
+
+
+
+
+
+
+-- Insert sample data into Ministry table
+INSERT INTO Ministry (MinistryName, Location, ContactInformation, PoliciesAndRegulations)
+VALUES 
+    ('Health Ministry India', 'National', '011-23456789', 'Public health policies and regulations for India'),
+    ('State Health Department Maharashtra', 'Maharashtra', '022-87654321', 'State-specific health policies for Maharashtra'),
+    ('National Health Services India', 'National', '011-98765432', 'Healthcare services at the national level in India'),
+    ('District Health Authority Delhi', 'Delhi', '011-55554444', 'Local health regulations and initiatives for Delhi'),
+    ('Public Health Bureau Mumbai', 'Mumbai', '022-33334444', 'City-wide public health programs in Mumbai');
+
+-- Insert sample data into Facilities table
+INSERT INTO Facilities (FacilityName, Location, ContactInformation, ServicesOffered)
+VALUES 
+    ('AIIMS New Delhi', 'New Delhi', '011-12345678', 'Specialized medical care, Research, Education'),
+    ('Government Hospital Pune', 'Pune', '020-87654321', 'Emergency, Surgery, Pediatrics'),
+    ('Private Clinic Bangalore', 'Bangalore', '080-11112222', 'Primary care, Immunizations'),
+    ('District Health Center Kolkata', 'Kolkata', '033-55556666', 'Family medicine, Maternal care'),
+    ('Teaching Hospital Chennai', 'Chennai', '044-99998888', 'Medical education, Specialized care');
+
+-- Insert sample data into Professionals table
+INSERT INTO Professionals (Name, Specialty, ContactInformation, LicenseInformation)
+VALUES 
+    ('Dr. Patel', 'Cardiologist', '022-11112222', 'LicenseIN123'),
+    ('Dr. Khan', 'Pediatrician', '080-22223333', 'LicenseIN456'),
+    ('Dr. Reddy', 'Oncologist', '011-33334444', 'LicenseIN789'),
+    ('Dr. Desai', 'Family Medicine', '033-44445555', 'LicenseIN012'),
+    ('Dr. Sharma', 'Neurologist', '044-66667777', 'LicenseIN345');
+
+-- Insert sample data into Departments table
+INSERT INTO Departments (DepartmentName, Description, FacilityID)
+VALUES 
+    ('Cardiology', 'Heart-related diseases', 1),
+    ('Pediatrics', 'Child healthcare', 2),
+    ('Oncology', 'Cancer treatment', 3),
+    ('Family Medicine', 'General medical care', 4),
+    ('Neurology', 'Nervous system disorders', 5);
+
+-- Insert sample data into Equipment table
+INSERT INTO Equipment (EquipmentName, Quantity, Condition, MaintenanceSchedule, DepartmentID)
+VALUES 
+    ('ECG Machine', 5, 'Good', 'Monthly', 1),
+    ('Vaccination Refrigerator', 2, 'Excellent', 'Quarterly', 2),
+    ('MRI Scanner', 1, 'Fair', 'Annually', 3),
+    ('X-ray Machine', 3, 'Good', 'Bi-monthly', 4),
+    ('EEG Equipment', 2, 'Excellent', 'Monthly', 5);
+
+-- Insert sample data into RegulatoryInspections table
+INSERT INTO RegulatoryInspections (FacilityID, ProfessionalID, InspectionDate, ComplianceStatus)
+VALUES 
+    (1, 1, '2024-01-28', 'Compliant'),
+    (2, 2, '2024-02-15', 'Compliant'),
+    (3, 3, '2024-03-10', 'Non-Compliant'),
+    (4, 4, '2024-04-05', 'Compliant'),
+    (5, 5, '2024-05-20', 'Compliant');
+
+-- Insert sample data into HealthStatistics table
+INSERT INTO HealthStatistics (MinistryID, StatisticType, Data, Date)
+VALUES 
+    (1, 'Disease Prevalence', '10%', '2024-01-28'),
+    (1, 'Vaccination Rate', '95%', '2024-01-28'),
+    (2, 'Birth Rate', '5 per 1,000', '2024-01-28'),
+    (3, 'Cancer Incidence', '3%', '2024-01-28'),
+    (4, 'Emergency Visits', '150 per day', '2024-01-28');
+
+
+
+
+
+
+-- SELECT JOIN EXAMPLES
+
+
+--INNER JOIN
+SELECT Professionals.Name, Professionals.Specialty, Departments.DepartmentName
+FROM Professionals
+INNER JOIN Departments ON Professionals.DepartmentID = Departments.DepartmentID;
+
+
+
+--LEFT JOIN
+SELECT Facilities.FacilityName, RegulatoryInspections.InspectionDate, RegulatoryInspections.ComplianceStatus
+FROM Facilities
+LEFT JOIN RegulatoryInspections ON Facilities.FacilityID = RegulatoryInspections.FacilityID;
+
+
+
+--RIGHT JOIN
+
+SELECT Facilities.FacilityName, RegulatoryInspections.InspectionDate, RegulatoryInspections.ComplianceStatus
+FROM RegulatoryInspections
+RIGHT JOIN Facilities ON RegulatoryInspections.FacilityID = Facilities.FacilityID;
+
+
+--FULL OUTER JOIN
+
+SELECT Professionals.Name, Professionals.Specialty, Departments.DepartmentName
+FROM Professionals
+FULL OUTER JOIN Departments ON Professionals.DepartmentID = Departments.DepartmentID;
+
+
+
+--SELF JOIN 
+SELECT 
+    p1.Name AS Professional1, p2.Name AS Professional2, 
+    p1.Specialty, Departments.DepartmentName
+FROM Professionals p1
+JOIN Professionals p2 ON p1.Specialty = p2.Specialty AND p1.DepartmentID = p2.DepartmentID
+JOIN Departments ON p1.DepartmentID = Departments.DepartmentID
+WHERE p1.ProfessionalID < p2.ProfessionalID; -- To avoid duplicate pairs
+
+
+
+--CROSS JOIN
+
+SELECT Facilities.FacilityName, Professionals.Name
+FROM Facilities
+CROSS JOIN Professionals;
+
+
+--UPDATE EXAMPLE
+
+UPDATE Facilities SET ContactInformation = '123-456-7890' WHERE FacilityID = 1;
+
+
+
+--DELETE EXAMPLE
+
+DELETE FROM Professionals WHERE ProfessionalID = 6;
+
+
+
+
+-- Indexing example (on Facilities table's Location column)
+
+
+CREATE INDEX idx_Location ON Facilities(Location);
+
+
+-- Exception handling in stored procedure example
+
+CREATE PROCEDURE InsertProfessional
+    @Name VARCHAR(255),
+    @Specialty VARCHAR(255),
+    @ContactInformation VARCHAR(20),
+    @LicenseInformation VARCHAR(255)
+AS
+BEGIN
+    BEGIN TRY
+        INSERT INTO Professionals (Name, Specialty, ContactInformation, LicenseInformation)
+        VALUES (@Name, @Specialty, @ContactInformation, @LicenseInformation);
+    END TRY
+    BEGIN CATCH
+        SELECT ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END;
+
+
+
+-- User-Defined Function example
+CREATE FUNCTION GetAverageEquipmentQuantity()
+RETURNS FLOAT
+AS
+BEGIN
+    DECLARE @Average FLOAT;
+
+    SELECT @Average = AVG(Quantity)
+    FROM Equipment;
+
+    RETURN @Average;
+END;
+
+
+
+-- View example
+
+CREATE VIEW ProfessionalsView AS
+SELECT ProfessionalID, Name, Specialty
+FROM Professionals;
+
+
+-- Aggregate function example
+SELECT AVG(Quantity) AS AverageQuantity
+FROM Equipment;
+
+
+-- Trigger example (updating LastModified column)
+CREATE TRIGGER UpdateLastModified
+ON Facilities
+AFTER UPDATE
+AS
+BEGIN
+    UPDATE Facilities
+    SET LastModified = GETDATE()
+    WHERE FacilityID IN (SELECT FacilityID FROM inserted);
+END;
+
+
+-- stored procedure with a transaction
+
+
+CREATE PROCEDURE UpdatePatientInformation
+    @PatientID INT,
+    @NewAddress VARCHAR(255),
+    @NewPhoneNumber VARCHAR(20)
+AS
+BEGIN
+    -- Begin the transaction
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        -- Update patient information
+        UPDATE Patients
+        SET Address = @NewAddress,
+            PhoneNumber = @NewPhoneNumber
+        WHERE PatientID = @PatientID;
+
+        -- If everything is successful, commit the transaction
+        COMMIT;
+        PRINT 'Transaction committed successfully.';
+    END TRY
+    BEGIN CATCH
+        -- If an error occurs, roll back the transaction
+        ROLLBACK;
+        PRINT 'Transaction rolled back due to an error.';
+
+        -- Optionally, you can raise the error for further handling
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        SET @ErrorMessage = ERROR_MESSAGE();
+        THROW 51000, @ErrorMessage, 1;
+    END CATCH
+END;
+
+-- Execute the stored procedure
+EXEC UpdatePatientInformation 
+    @PatientID = 1,
+    @NewAddress = 'New Street, City',
+    @NewPhoneNumber = '555-1234';
